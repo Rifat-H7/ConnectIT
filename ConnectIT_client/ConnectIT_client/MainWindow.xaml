@@ -5,8 +5,84 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ConnectIT_client"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="350" Width="650" WindowStyle="None" ResizeMode="NoResize">
+    <Window.Resources>
+        <Style x:Key="RoundedButton" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                                BorderBrush="{TemplateBinding BorderBrush}" 
+                                BorderThickness="{TemplateBinding BorderThickness}" 
+                                CornerRadius="5" 
+                                Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
     <Grid>
+        <!-- Define Grid Rows -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <!-- Top Row -->
+            <RowDefinition Height="3*" />
+            <!-- Bottom Row -->
+        </Grid.RowDefinitions>
 
+        <!-- Second row should have only 2 columns -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <!-- Bottom Left -->
+            <ColumnDefinition Width="1*" />
+            <!-- Bottom Right -->
+        </Grid.ColumnDefinitions>
+
+        <!-- Top Left Cell -->
+        <Border Grid.Row="0" Grid.Column="0" Background="#4990e2" MouseDown="TitleBar_MouseDown"/>
+
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="ConnectIT" FontSize="20" FontWeight="ExtraBold" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDown="TitleBar_MouseDown" />
+
+        <!-- Top Middle Cell -->
+        <Border Grid.Row="0" Grid.Column="1" Background="#262d3f"  BorderBrush="#262d3f" MouseDown="TitleBar_MouseDown"/>
+
+        <!-- Top Right Cell -->
+        <Border Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" Background="#262d3f" BorderBrush="Black" MouseDown="TitleBar_MouseDown">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Grid.Column="2" Content="🗕" Margin="0,0,10,0" Background="Transparent" Foreground="White" FontSize="16" BorderThickness="0" Click="Minimize_Click"  />
+                <Button Grid.Column="2" Content="✖" Background="Transparent" Foreground="White" FontSize="16" BorderThickness="0" Click="Close_Click" />
+            </StackPanel>
+        </Border>
+
+        <!-- Bottom Left Cell -->
+        <Border Grid.Row="1" Grid.Column="0" Background="#e7f1fc" Grid.ColumnSpan="2">
+            <StackPanel Background="#e7f1fc" Grid.Column="0" Margin="30,0,30,0">
+                <!--<Separator Margin="15"/>-->
+
+                <TextBlock Text="Remote Control"  Foreground="DarkSlateGray" FontSize="18" FontWeight="Bold" Margin="0,20,0,20"/>
+                <TextBlock Text="YOUR ID" Foreground="Gray"/>
+                <TextBlock Text="123 456 789" Foreground="Black"  FontSize="30" FontWeight="Bold" Margin="0,5,0,15"/>
+
+                <Button Content="SEE PASSWORD" Background="#4DA6FF" Cursor="Hand" Foreground="White" Padding="8" FontSize="16" BorderThickness="0" Style="{StaticResource RoundedButton}"/>
+                <TextBlock Text="READY TO CONNECT (SECURE CONNECTION)" Foreground="DarkSlateGray" FontSize="12" FontWeight="Bold" Margin="10,20,0,0"/>
+            </StackPanel>
+        </Border>
+
+        <!-- Bottom Right Cell -->
+        <Border Grid.Row="1" Grid.Column="2" Background="#1D2533" Grid.ColumnSpan="2">
+            <!-- Right Panel -->
+            <StackPanel  Grid.Column="1" Margin="30,0,30,0">
+                <TextBlock Text="Control Remote Computer"  Foreground="White" FontSize="20" FontWeight="Bold" Margin="0,20,0,10"/>
+                <TextBlock Text="Partner ID" Foreground="Gray"/>
+                <!--<TextBox  Background="#2A3445" Foreground="White" Padding="12" FontSize="16" BorderThickness="0" Margin="0,5,0,15"/>-->
+                <ComboBox Background="#2A3445" Foreground="White" FontSize="16" BorderThickness="0" Margin="0,5,0,15"/>
+
+                <Button Content="CONNECT TO PARTNER" Cursor="Hand" Background="#4DA6FF" Foreground="White" Padding="8" FontSize="18" BorderThickness="0" Style="{StaticResource RoundedButton}"/>
+            </StackPanel>
+        </Border>
     </Grid>
 </Window>
