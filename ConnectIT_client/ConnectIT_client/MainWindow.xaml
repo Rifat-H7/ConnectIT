@@ -54,7 +54,7 @@
         <Border Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" Background="#262d3f" BorderBrush="Black" MouseDown="TitleBar_MouseDown">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                 <Button Grid.Column="2" Content="🗕" Margin="0,0,10,0" Background="Transparent" Foreground="White" FontSize="16" BorderThickness="0" Click="Minimize_Click"  />
-                <Button Grid.Column="2" Content="✖" Background="Transparent" Foreground="White" FontSize="16" BorderThickness="0" Click="Close_Click" />
+                <Button Grid.Column="2" Content="✖" Margin="0,0,10,0" Background="Transparent" Foreground="White" FontSize="16" BorderThickness="0" Click="Close_Click" />
             </StackPanel>
         </Border>
 

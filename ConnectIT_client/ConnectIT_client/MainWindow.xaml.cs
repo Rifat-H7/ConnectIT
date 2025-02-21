@@ -37,9 +37,5 @@ public partial class MainWindow : Window
     {
         this.Close();
     }
-    private void ArrowButton_Click(object sender, RoutedEventArgs e)
-    {
-        // Toggle the visibility of the dropdown (Popup)
-        DropdownPopup.IsOpen = !DropdownPopup.IsOpen;
-    }
+
 }
