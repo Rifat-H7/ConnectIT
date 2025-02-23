@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ConnectIT_client"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="650" WindowStyle="None" ResizeMode="NoResize">
+        Title="MainWindow" Height="350" Width="650" WindowStyle="None" ResizeMode="NoResize" AllowsTransparency="True" Background="{x:Null}">
     <Window.Resources>
         <Style x:Key="RoundedButton" TargetType="Button">
             <Setter Property="Template">
@@ -43,7 +43,7 @@
         </Grid.ColumnDefinitions>
 
         <!-- Top Left Cell -->
-        <Border Grid.Row="0" Grid.Column="0" Background="#4990e2" MouseDown="TitleBar_MouseDown"/>
+        <Border Grid.Row="0" Grid.Column="0" CornerRadius="10,0,0,0" Background="#4990e2" MouseDown="TitleBar_MouseDown"/>
 
         <TextBlock Grid.Row="0" Grid.Column="0" Text="ConnectIT" FontSize="20" FontWeight="ExtraBold" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDown="TitleBar_MouseDown" />
 
@@ -51,7 +51,7 @@
         <Border Grid.Row="0" Grid.Column="1" Background="#262d3f"  BorderBrush="#262d3f" MouseDown="TitleBar_MouseDown"/>
 
         <!-- Top Right Cell -->
-        <Border Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" Background="#262d3f" BorderBrush="Black" MouseDown="TitleBar_MouseDown">
+        <Border Grid.Row="0" Grid.Column="2" CornerRadius="0,10,0,0" Grid.ColumnSpan="2" Background="#262d3f" BorderBrush="Black" MouseDown="TitleBar_MouseDown">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                 <Button Grid.Column="2" Content="🗕" Margin="0,0,10,0" Background="Transparent" Foreground="White" FontSize="16" BorderThickness="0" Click="Minimize_Click"  />
                 <Button Grid.Column="2" Content="✖" Margin="0,0,10,0" Background="Transparent" Foreground="White" FontSize="16" BorderThickness="0" Click="Close_Click" />
@@ -59,7 +59,7 @@
         </Border>
 
         <!-- Bottom Left Cell -->
-        <Border Grid.Row="1" Grid.Column="0" Background="#e7f1fc" Grid.ColumnSpan="2">
+        <Border Grid.Row="1" Grid.Column="0" CornerRadius="0,0,0,10" Background="#e7f1fc" Grid.ColumnSpan="2">
             <StackPanel Background="#e7f1fc" Grid.Column="0" Margin="30,0,30,0">
                 <!--<Separator Margin="15"/>-->
 
@@ -73,7 +73,7 @@
         </Border>
 
         <!-- Bottom Right Cell -->
-        <Border Grid.Row="1" Grid.Column="2" Background="#1D2533" Grid.ColumnSpan="2">
+        <Border Grid.Row="1" Grid.Column="2"  Background="#1D2533" Grid.ColumnSpan="2" CornerRadius="0,0,10,0">
             <!-- Right Panel -->
             <StackPanel  Grid.Column="1" Margin="30,0,30,0">
                 <TextBlock Text="Control Remote Computer"  Foreground="White" FontSize="20" FontWeight="Bold" Margin="0,20,0,10"/>
